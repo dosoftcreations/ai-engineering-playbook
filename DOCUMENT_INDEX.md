@@ -1,12 +1,12 @@
 # Document Index
 
-> Classification of every document in the repository to establish clear information architecture.
+> Classification of every document in the repository to establish a clear information architecture.
 
 ---
 
 ## 1. Core Documents
 
-*Essential policies, workflows, budgets, and prompt patterns required for daily operations.*
+*Essential policies, workflows, budgets, exact command scripts, and prompt patterns required for daily operations.*
 
 ### Standards
 *   [AI Engineering Standard](standards/AI_ENGINEERING_STANDARD.md) — The central operating policy and rules.
@@ -31,6 +31,13 @@
 *   [Incident Response Playbook](playbooks/INCIDENT.md) — Triage, roles, and post-mortems.
 *   [Rollback Playbook](playbooks/ROLLBACK.md) — Undoing failed deployments.
 
+### Recipes
+*   [Create AGENTS.md Recipe](recipes/CREATE_AGENTS_MD.md) — Step-by-step agent rules copy setup.
+*   [Fix Production Bug Recipe](recipes/FIX_PRODUCTION_BUG.md) — Exact command flow to test and fix bugs.
+*   [Database Migration Recipe](recipes/DATABASE_MIGRATION.md) — Steps for local backup, testing, and migration execution.
+*   [Launch SaaS Recipe](recipes/LAUNCH_SAAS.md) — Exact release checklists and post-deploy smoke checks.
+*   [Ship v1.0 Recipe](recipes/SHIP_V1.md) — Steps to generate changelogs and git tag versions.
+
 ### Prompts
 *   [Audit Prompt](prompts/AUDIT.md) — Running repository risk analysis.
 *   [Implementation Prompt](prompts/IMPLEMENTATION.md) — Executing bounded tasks.
@@ -47,9 +54,11 @@
 
 ### Setup Guides & Guidance
 *   [Start Here](START_HERE.md) — Entry portal for new visitors.
-*   [Learning Path](LEARNING_PATH.md) — Guided reading sequence.
+*   [Scenario Guides](SCENARIO_GUIDES.md) — Navigation guides by problem scenario.
+*   [Learning Paths](LEARNING_PATH.md) — Guided reading sequences by user journey.
 *   [Curriculum](CURRICULUM.md) — Leveled onboarding path.
 *   [Information Architecture](INFORMATION_ARCHITECTURE.md) — Design layouts.
+*   [Repository UX Review](REPOSITORY_UX_REVIEW.md) — Developer DX usability review.
 *   [Agent Rules Template](templates/AGENTS.md) — Workspace rules.
 *   [Claude Guidance](templates/CLAUDE.md) — IDE instructions.
 *   [Gemini Guidance](templates/GEMINI.md) — IDE instructions.
@@ -71,9 +80,9 @@
 *Glossaries, decision trees, checklists, and measurement frameworks.*
 
 ### Reference & Decisions
-*   [Decision Trees](reference/DECISION_TREE.md) — Step-by-step guides for subagents, refactoring, and playbooks.
+*   [Decision Trees](reference/DECISION_TREE.md) — Step-by-step guides for subagents, model routing, refactoring, playbooks, and launch mode.
 *   [Agent Patterns](reference/AGENT_PATTERNS.md) — AI communication architectures.
-*   [Anti-Patterns](reference/ANTI_PATTERNS.md) — Behaviors to avoid.
+*   [Anti-Patterns](reference/ANTI_PATTERNS.md) — Common habits to avoid (context explosion, agent spam, infinite loops).
 *   [Glossary](reference/GLOSSARY.md) — Terminology definitions.
 *   [Model Comparison](reference/MODEL_COMPARISON.md) — Model tiers and strengths.
 

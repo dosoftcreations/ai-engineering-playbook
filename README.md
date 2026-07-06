@@ -76,17 +76,21 @@ The repository is structured to allow quick lookups based on your current task:
 ```text
 .
 ├── START_HERE.md               # The entry portal for new visitors
+├── SCENARIO_GUIDES.md          # Navigation guides by problem scenario
 ├── LEARNING_PATH.md            # Guided reading roadmap
 ├── CURRICULUM.md               # Training syllabus divided into L1-L5 levels
 ├── REPOSITORY_MAP.md           # Visual breakdown of directories
 ├── DOCUMENT_INDEX.md           # Every document classified by role
+├── REPOSITORY_UX_REVIEW.md     # Usability review & DX audit
 │
 ├── standards/                  # Stable rules (Routing, Token budgets, Context limits)
 ├── playbooks/                  # Procedures (Features, Bug fixes, Releases, Outages)
+├── recipes/                    # Exact execution commands (SaaS launch, bug hotfix)
 ├── checklists/                 # Verification (Pre-commit, Pre-PR, Production readiness)
 ├── templates/                  # Reusable boilerplates (Issue, Pull request templates, ADRs)
 ├── prompts/                    # Bounded prompt patterns (Audit, Implementation, Launch gates)
 └── reference/                  # Glossaries, comparison tables, and decision trees
+
 ```
 
 For situational guidance mapping specific tasks to files, see [DOCUMENT_INDEX.md](DOCUMENT_INDEX.md).

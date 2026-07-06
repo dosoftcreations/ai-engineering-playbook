@@ -1,78 +1,52 @@
-# Learning Path
+# Learning Paths
 
-> A step-by-step reading roadmap designed to guide you through the AI Engineering Playbook, building from foundational concepts to advanced production execution.
-
----
-
-## Path Overview
-
-```mermaid
-graph TD
-    A[README] --> B[Philosophy]
-    B --> C[AI Engineering Standard]
-    C --> D[Model Selection]
-    D --> E[Token Economy]
-    E --> F[Context Management]
-    F --> G[Playbooks]
-    G --> H[Templates]
-    H --> I[Advanced Topics]
-    
-    style A fill:#4CAF50,stroke:#388E3C,color:#fff
-    style I fill:#FF9800,stroke:#F57C00,color:#fff
-```
+> Guided roadmaps designed to help you navigate the AI Engineering Playbook based on your specific role or journey.
 
 ---
 
-## 1. Entry Point: README
-*   **Location:** [README.md](README.md)
-*   **Purpose:** Establishes the repository's mission, core principles, target audience, and layout.
-*   **What you learn:** The vision of the playbook and how to navigate the folders.
-*   **Estimated reading time:** 3 mins
+## 1. Onboarding Paths (By User Journey)
 
-## 2. Core Philosophy
-*   **Location:** [README.md#core-philosophy](README.md#core-philosophy) & [standards/AI_ENGINEERING_STANDARD.md#2-operating-philosophy](standards/AI_ENGINEERING_STANDARD.md#2-operating-philosophy)
-*   **Purpose:** Lays out the operational trade-offs (`Revenue > Perfection`, `Security > Speed`, `Stability > Elegance`).
-*   **What you learn:** The mindset of value-driven, disciplined engineering with AI.
-*   **Estimated reading time:** 5 mins
+### 🚀 Path A: Solo Founder
+*Best for: Solopreneurs, single-developer startups, and builders using AI as an automated development team.*
+*   **Goal:** Build, test, and ship features rapidly with zero code bloat and zero token cost waste.
+*   **Reading Roadmap:**
+    1.  [Core Philosophy](README.md#3-core-philosophy) — Establish the cost-value mindset.
+    2.  [AI Engineering Standard](standards/AI_ENGINEERING_STANDARD.md) — Master task sizes, editing limits, and stop rules.
+    3.  [Model Selection Standard](standards/MODEL_SELECTION.md) — Route simple tasks to Small/Mini models to save costs.
+    4.  [Agent Template](templates/AGENTS.md) — Copy and load rules into your coding IDE.
+*   **Estimated reading time:** 20 mins
 
-## 3. The Baseline: AI Engineering Standard
-*   **Location:** [standards/AI_ENGINEERING_STANDARD.md](standards/AI_ENGINEERING_STANDARD.md)
-*   **Purpose:** The central rulebook for all AI-assisted tasks.
-*   **What you learn:** Task size classification (Tiny, Small, Medium, Large, Critical), guidelines for refactoring, editing rules, and stopping thresholds.
-*   **Estimated reading time:** 12 mins
+### 👥 Path B: Team Lead
+*Best for: Tech leads, engineering managers, and architects establishing standards for a development team.*
+*   **Goal:** Enforce quality controls, run safe code reviews, and automate verification checks.
+*   **Reading Roadmap:**
+    1.  [Review Standard](standards/REVIEW_STANDARD.md) — Set up PR severity levels and checklists.
+    2.  [Git Standard](standards/GIT_STANDARD.md) — Maintain clean branch and commit trees.
+    3.  [Subagent Standard](standards/SUBAGENT_STANDARD.md) — Set boundaries for multi-agent delegation.
+    4.  [Governance](GOVERNANCE.md) — Establish contribution standards.
+*   **Estimated reading time:** 25 mins
 
-## 4. Routing Decisions: Model Selection
-*   **Location:** [standards/MODEL_SELECTION.md](standards/MODEL_SELECTION.md)
-*   **Purpose:** Framework for choosing the lowest-cost model appropriate for a task.
-*   **What you learn:** The capability tier model (Small/Mini, Medium, High, Extra-High), routing table for specific tasks, and rules for escalating to larger models.
-*   **Estimated reading time:** 6 mins
+### 🚢 Path C: Production Launch
+*Best for: Operations engineers, release managers, and developers preparing to ship a product to live users.*
+*   **Goal:** Minimize release risks, protect database integrity, and ensure rollback capability.
+*   **Reading Roadmap:**
+    1.  [Launch Mode Playbook](playbooks/LAUNCH_MODE.md) — Learn launch freeze rules and blocker triage.
+    2.  [Release Playbook](playbooks/RELEASE.md) — Walk through pre-deploy, deploy, and post-deploy.
+    3.  [Production Checklist](checklists/PRODUCTION.md) — Verify infrastructure, SSL, backups, and alerting.
+    4.  [Incident Playbook](playbooks/INCIDENT.md) — Plan triage and post-mortems for outages.
+*   **Estimated reading time:** 30 mins
 
-## 5. Cost Efficiency: Token Economy
-*   **Location:** [standards/TOKEN_ECONOMY.md](standards/TOKEN_ECONOMY.md)
-*   **Purpose:** Rules and budgets to control runaway token consumption.
-*   **What you learn:** The core sources of token waste, hard budgets for file reads and subagents, and guidelines for good/bad token behaviors.
-*   **Estimated reading time:** 8 mins
+---
 
-## 6. Context Control: Context Management
-*   **Location:** [standards/CONTEXT_MANAGEMENT.md](standards/CONTEXT_MANAGEMENT.md)
-*   **Purpose:** Keeping the working context small to prevent model confusion and errors.
-*   **What you learn:** Priority order for reading files, context budget tables, and the working summary template.
-*   **Estimated reading time:** 8 mins
+## 2. General Sequential Reading Path
 
-## 7. Execution: Playbooks
-*   **Location:** [playbooks/README.md](playbooks/README.md)
-*   **Purpose:** Step-by-step instructions for specific engineering tasks.
-*   **What you learn:** How to build features ([FEATURE.md](playbooks/FEATURE.md)), fix bugs ([BUG_FIX.md](playbooks/BUG_FIX.md)), run launches ([LAUNCH_MODE.md](playbooks/LAUNCH_MODE.md)), release code ([RELEASE.md](playbooks/RELEASE.md)), and respond to live issues ([HOTFIX.md](playbooks/HOTFIX.md) and [INCIDENT.md](playbooks/INCIDENT.md)).
-*   **Estimated reading time:** 20 mins (selectively by task type)
+If you prefer to read the playbook cover-to-cover, follow this sequence:
 
-## 8. Guardrails: Checklists & Templates
-*   **Locations:** [checklists/README.md](checklists/README.md) & [templates/README.md](templates/README.md)
-*   **Purpose:** Reusable documents and verification steps to run before committing or deploying.
-*   **What you learn:** Pre-PR review criteria ([PRE_PR.md](checklists/PRE_PR.md)), agent prompt files, and PR templates.
-*   **Estimated reading time:** 10 mins
-
-## 9. Advanced Topics & Strategy
-*   **Locations:** [reference/README.md](reference/README.md), [rfcs/README.md](rfcs/README.md), [metrics/README.md](metrics/README.md)
-*   **Purpose:** High-level patterns, company-wide metrics, and long-term operating models.
-*   **What you learn:** How to measure AI ROI ([AI_ROI.md](metrics/AI_ROI.md)), subagent guidelines, patterns for solo developers and companies, and architectural decision trees.
-*   **Estimated reading time:** 15 mins
+1.  **Start Here:** [START_HERE.md](START_HERE.md) — Onboarding overview.
+2.  **Core Standard:** [standards/AI_ENGINEERING_STANDARD.md](standards/AI_ENGINEERING_STANDARD.md) — Rules of the road.
+3.  **Model Choice:** [standards/MODEL_SELECTION.md](standards/MODEL_SELECTION.md) — Routing logic.
+4.  **Token Budgets:** [standards/TOKEN_ECONOMY.md](standards/TOKEN_ECONOMY.md) — Cost limits.
+5.  **Context Limits:** [standards/CONTEXT_MANAGEMENT.md](standards/CONTEXT_MANAGEMENT.md) — Scope control.
+6.  **Playbooks:** [playbooks/README.md](playbooks/README.md) — Operational guides.
+7.  **Checklists:** [checklists/README.md](checklists/README.md) — Quality validation steps.
+8.  **Reference:** [reference/README.md](reference/README.md) — Glossary and decision trees.

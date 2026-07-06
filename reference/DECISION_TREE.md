@@ -72,3 +72,18 @@ graph TD
     E -->|No| F[DO NOT CREATE. Use a standard checklist instead]
     E -->|Yes| G[CREATE NEW PLAYBOOK. Save in playbooks/, update playbooks/README.md]
 ```
+
+---
+
+## 6. Should I Switch to Launch Mode?
+
+```mermaid
+graph TD
+    A[Is the production deployment scheduled within 7 days?] -->|Yes| B[ACTIVATE LAUNCH MODE. Freeze features and ban cosmetic refactoring]
+    A -->|No| C{Is there an upcoming critical public demonstration, marketing launch, or client audit?}
+    C -->|Yes| D[ACTIVATE LAUNCH MODE. Prioritize stability and security blockers]
+    C -->|No| E{Is the repository experiencing active production incidents or critical security failures?}
+    E -->|Yes| F[ACTIVATE LAUNCH MODE. Halt new feature development until hotfixes are resolved]
+    E -->|No| G[KEEP STANDARD MODE ACTIVE. Continue standard playbook development]
+```
+

@@ -12,8 +12,9 @@
 ├── standards/                 # Core rules, limits, and standards
 ├── playbooks/                 # Step-by-step operational workflows
 ├── checklists/                # Verification checklists (pre-commit, release, etc.)
-├── templates/                 # Reusable starting points (PRs, ADRs, issue bodies)
+├── templates/                 # Reusable boilerplates (PR templates, issue structures, ADRs)
 ├── prompts/                   # Production-oriented prompt patterns
+├── recipes/                   # Step-by-step exact execution recipes (SaaS launch, bug hotfix)
 ├── reference/                 # Glossary, comparisons, decision trees
 ├── case-studies/              # Contextual setups (solo devs, startups, agencies)
 ├── metrics/                   # Measurement frameworks (ROI, token efficiency)
@@ -33,6 +34,11 @@
 *   **Role:** Operations and Workflows.
 *   **Content:** Procedural execution steps for tasks.
 *   **Key Files:** [playbooks/FEATURE.md](playbooks/FEATURE.md), [playbooks/BUG_FIX.md](playbooks/BUG_FIX.md).
+
+### [recipes/](recipes/)
+*   **Role:** Actionable Execution.
+*   **Content:** Exact shell commands, db backup instructions, and release steps.
+*   **Key Files:** [recipes/LAUNCH_SAAS.md](recipes/LAUNCH_SAAS.md), [recipes/FIX_PRODUCTION_BUG.md](recipes/FIX_PRODUCTION_BUG.md).
 
 ### [checklists/](checklists/)
 *   **Role:** Quality Gate and Verification.
@@ -54,16 +60,6 @@
 *   **Content:** Theoretical models, comparison tables, and decisions.
 *   **Key Files:** [reference/DECISION_TREE.md](reference/DECISION_TREE.md), [reference/GLOSSARY.md](reference/GLOSSARY.md).
 
-### [case-studies/](case-studies/)
-*   **Role:** Adaptability and Context.
-*   **Content:** Real-world playbook configurations based on team size.
-*   **Key Files:** [case-studies/SOLO_DEVELOPER.md](case-studies/SOLO_DEVELOPER.md).
-
-### [metrics/](metrics/)
-*   **Role:** Analytics and Review.
-*   **Content:** Frameworks to measure AI tool ROI and developer efficiency.
-*   **Key Files:** [metrics/AI_ROI.md](metrics/AI_ROI.md).
-
 ---
 
 ## 3. Relationships Between Components
@@ -71,7 +67,8 @@
 ```mermaid
 graph TD
     standards[standards/ Policy] -->|governs| playbooks[playbooks/ Execution]
-    playbooks -->|requires| checklists[checklists/ Verification]
+    playbooks -->|defines workflows for| recipes[recipes/ Execution]
+    recipes -->|requires| checklists[checklists/ Verification]
     templates[templates/ Boilerplate] -->|speeds up| playbooks
     prompts[prompts/ Prompts] -->|automates| playbooks
     reference[reference/ Support] -->|guides| standards

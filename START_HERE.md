@@ -1,52 +1,52 @@
 # Start Here
 
-> Welcome to the AI Engineering Playbook — a vendor-neutral operating manual for software development teams building, shipping, and maintaining software with AI.
+> Welcome to the AI Engineering Playbook — a vendor-neutral operating manual for software development teams building, shipping, and maintaining production systems with AI coding assistants.
 
 ---
 
-## 1. Quick Start
+## 🎯 Target Audience
 
-If you are an agent or an engineer starting work in a repository, follow these three steps immediately:
+### Who This Repository Is For
+*   **Solo Founders & builders** who use AI as their virtual engineering team and want to avoid code bloat and runaway costs.
+*   **Team Leads & tech leads** who need to establish coding standards, review guidelines, and automated quality gates for their developers.
+*   **Operations & release engineers** who want to minimize risk during production releases, database migrations, and outages.
+*   **Developers** using Cursor, Claude Code, Gemini CLI, OpenHands, local agents, or custom AI coding workflows.
 
-1. **Understand your instructions:** Add the template instructions [templates/AGENTS.md](templates/AGENTS.md) to your workspace customizations (e.g. as `AGENTS.md` or system instructions).
-2. **Review the core standard:** Read [standards/AI_ENGINEERING_STANDARD.md](standards/AI_ENGINEERING_STANDARD.md) before making any code modifications.
-3. **Know your limits:** Check your token and context budget in [standards/TOKEN_ECONOMY.md](standards/TOKEN_ECONOMY.md) to avoid runaway costs.
-
----
-
-## 2. Choose Your Path
-
-Depending on your goal, select one of the following paths through the handbook:
-
-### Path A: The Guided Learning Path
-*Best for: Engineers new to AI-assisted coding or teams setting up their workflow.*
-*   Follow the logical sequence of concepts from philosophy to advanced multi-agent design.
-*   **Go to:** [LEARNING_PATH.md](LEARNING_PATH.md)
-
-### Path B: The Structured Curriculum
-*Best for: Team leads looking to train engineers or structure a company onboarding flow.*
-*   Leveled levels of competency from L1 (Mindset) to L5 (Director/Scale).
-*   **Go to:** [CURRICULUM.md](CURRICULUM.md)
-
-### Path C: Quick Reference Lookup
-*Best for: Active developers who need to look up a specific workflow, checklist, or template.*
-*   **Standards:** [standards/README.md](standards/README.md) (Model selection, context management, tool usage, review standards).
-*   **Playbooks:** [playbooks/README.md](playbooks/README.md) (Features, bug fixes, launch mode, release, hotfixes, incidents).
-*   **Checklists:** [checklists/README.md](checklists/README.md) (Pre-commit, pre-PR, pre-release, production verification).
-*   **Templates:** [templates/README.md](templates/README.md) (Architecture design records, PR templates, issues).
-*   **Prompts:** [prompts/README.md](prompts/README.md) (Audit, implementation, and launch-gate prompt patterns).
+### Who This Repository Is NOT For
+*   ❌ Prompt collectors looking for "magical hacks" or simple copywriting templates.
+*   ❌ Developers looking for a general leaderboard of LLM model API speeds.
+*   ❌ Teams looking to automate coding entirely without human review or accountability.
 
 ---
 
-## 3. Core Philosophy
+## 🧭 Onboarding Paths (Choose Your Journey)
 
-Keep these core operating principles in mind at all times:
+To help you get value out of this handbook in under five minutes, choose the path that matches your current goal:
 
-```text
-Revenue > Perfection  — Keep client and active business work moving.
-Stability > Elegance  — Prefer simple, working designs over complex refactors.
-Security > Speed     — Do not compromise security for quick features.
-Small Diffs > Large   — Keep changes reviewable and targeted.
-```
+| User Journey | Primary Focus | Estimated Reading Time | Link |
+|---|---|---|---|
+| **Solo Founder** | Fast, cost-efficient, bloat-free feature building | 20 mins | [LEARNING_PATH.md#path-a-solo-founder](LEARNING_PATH.md#path-a-solo-founder) |
+| **Team Lead** | Peer reviews, Git trees, subagent boundaries | 25 mins | [LEARNING_PATH.md#path-b-team-lead](LEARNING_PATH.md#path-b-team-lead) |
+| **Production Launch** | Launch blockers, deployments, incidents | 30 mins | [LEARNING_PATH.md#path-c-production-launch](LEARNING_PATH.md#path-c-production-launch) |
+| **General Reading** | Step-by-step sequential onboarding | 20 mins | [LEARNING_PATH.md#2-general-sequential-reading-path](LEARNING_PATH.md#2-general-sequential-reading-path) |
 
-For more, read the full standard in [standards/AI_ENGINEERING_STANDARD.md](standards/AI_ENGINEERING_STANDARD.md).
+---
+
+## ⚡ Problem-Oriented Scenario Guides
+
+If you are facing a specific operational problem right now, jump directly to the relevant files:
+*   I'm **fixing a production bug:** [recipes/FIX_PRODUCTION_BUG.md](recipes/FIX_PRODUCTION_BUG.md)
+*   I'm **starting a new project:** [recipes/CREATE_AGENTS_MD.md](recipes/CREATE_AGENTS_MD.md)
+*   I'm **preparing a launch candidate:** [recipes/LAUNCH_SAAS.md](recipes/LAUNCH_SAAS.md)
+*   I'm **running a database migration:** [recipes/DATABASE_MIGRATION.md](recipes/DATABASE_MIGRATION.md)
+
+For a complete list of problem-oriented links, see [SCENARIO_GUIDES.md](SCENARIO_GUIDES.md).
+
+---
+
+## 🧠 Core Philosophy & Quick Start
+
+If you are an agent or developer starting work in this repository:
+1.  Read the core operating standard first: [standards/AI_ENGINEERING_STANDARD.md](standards/AI_ENGINEERING_STANDARD.md).
+2.  Review your token and file budgets: [standards/TOKEN_ECONOMY.md](standards/TOKEN_ECONOMY.md).
+3.  Always check your diffs before committing: [checklists/PRE_COMMIT.md](checklists/PRE_COMMIT.md).

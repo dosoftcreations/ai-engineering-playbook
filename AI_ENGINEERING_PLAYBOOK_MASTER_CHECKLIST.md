@@ -9,11 +9,13 @@
 
 - [x] README.md
 - [x] START_HERE.md
+- [x] SCENARIO_GUIDES.md
 - [x] REPOSITORY_MAP.md
 - [x] DOCUMENT_INDEX.md
 - [x] LEARNING_PATH.md
 - [x] CURRICULUM.md
 - [x] REPOSITORY_AUDIT.md
+- [x] REPOSITORY_UX_REVIEW.md
 - [x] INFORMATION_ARCHITECTURE.md
 - [x] LICENSE
 - [x] CHANGELOG.md
@@ -23,6 +25,7 @@
 - [x] SECURITY.md
 - [x] GOVERNANCE.md
 - [x] MAINTAINERS.md
+
 
 
 ---
@@ -143,9 +146,21 @@
 
 ---
 
+# recipes/
+
+- [x] README.md
+- [x] CREATE_AGENTS_MD.md
+- [x] FIX_PRODUCTION_BUG.md
+- [x] DATABASE_MIGRATION.md
+- [x] LAUNCH_SAAS.md
+- [x] SHIP_V1.md
+
+---
+
 # metrics/
 
 - [x] README.md
+
 
 ---
 
