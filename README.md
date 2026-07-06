@@ -1,2 +1,10 @@
-# ai-engineering-playbook
-Practical playbooks, standards, and workflows for AI-assisted software engineering.
+.DS_Store
+node_modules/
+dist/
+build/
+.env
+.env.*
+!.env.example
+*.log
+tmp/
+.cache/
