@@ -1,36 +1,56 @@
 # Playbooks
 
-This directory contains repeatable procedures for common engineering work.
+> Actionable, step-by-step procedures for common engineering and operational tasks in the codebase.
 
-## Quick links
+---
 
-- [NEW_PROJECT.md](NEW_PROJECT.md)
-- [FEATURE.md](FEATURE.md)
-- [BUG_FIX.md](BUG_FIX.md)
-- [REFACTOR.md](REFACTOR.md)
-- [CODE_REVIEW.md](CODE_REVIEW.md)
-- [LAUNCH_MODE.md](LAUNCH_MODE.md)
-- [RELEASE.md](RELEASE.md)
-- [HOTFIX.md](HOTFIX.md)
-- [INCIDENT.md](INCIDENT.md)
-- [ROLLBACK.md](ROLLBACK.md)
-- [MONOREPO.md](MONOREPO.md)
-- [MICROSERVICES.md](MICROSERVICES.md)
-- [DATABASE_MIGRATION.md](DATABASE_MIGRATION.md)
-- [API_DESIGN.md](API_DESIGN.md)
-- [PLANNING.md](PLANNING.md)
-- [IMPLEMENTATION.md](IMPLEMENTATION.md)
-- [REVIEW.md](REVIEW.md)
-- [SECURITY_AUDIT.md](SECURITY_AUDIT.md)
-- [PERFORMANCE_REVIEW.md](PERFORMANCE_REVIEW.md)
+## 1. Situational Guide
 
-## Included documents
+Use this table to choose the correct playbook for your operational context:
 
-- FEATURE.md — feature development workflow.
-- BUG_FIX.md — defect investigation and fix workflow.
-- LAUNCH_MODE.md — launch decision and rollout workflow.
-- RELEASE.md — planned release workflow.
-- INCIDENT.md — incident response workflow.
-- REFACTOR.md — focused refactoring workflow.
+| If you need to... | Use this Playbook | Why it matters |
+|---|---|---|
+| **Add a new feature slice** | [FEATURE.md](FEATURE.md) | Guides feature slicing and integration gates. |
+| **Investigate and patch a bug** | [BUG_FIX.md](BUG_FIX.md) | Resolves defects with minimal risk and high verification. |
+| **Refactor structures or cleanup code** | [REFACTOR.md](REFACTOR.md) | Keeps refactoring scoped and prevents styling churn. |
+| **Prepare for a release candidate launch** | [LAUNCH_MODE.md](LAUNCH_MODE.md) | Activates feature freezes and audits launch blockers. |
+| **Perform a planned release deployment** | [RELEASE.md](RELEASE.md) | Standardizes pre-deploy, deploy, and post-deploy checks. |
+| **Deploy an emergency hotfix to live** | [HOTFIX.md](HOTFIX.md) | Restores stability quickly with constrained patches. |
+| **Manage an active production incident** | [INCIDENT.md](INCIDENT.md) | Triages severity, assigns roles, and outlines post-mortems. |
+| **Revert a broken production deployment** | [ROLLBACK.md](ROLLBACK.md) | Outlines service and schema rollback procedures. |
+| **Initialize a new repository or package** | [NEW_PROJECT.md](NEW_PROJECT.md) | Installs standards, configs, and issue templates. |
+| **Coordinate a peer code review** | [CODE_REVIEW.md](CODE_REVIEW.md) | Outlines review flows and approval metrics. |
+| **Design a complex task or architecture** | [PLANNING.md](PLANNING.md) | Structures research, options, and migration paths. |
+| **Run a security audit on a codebase** | [SECURITY_AUDIT.md](SECURITY_AUDIT.md) | Scans for vulnerability patterns and data risk. |
+| **Investigate slow queries or API latency** | [PERFORMANCE_REVIEW.md](PERFORMANCE_REVIEW.md) | Outlines profiling, indexing, and caching checks. |
+| **Configure packages in a monorepo** | [MONOREPO.md](MONOREPO.md) | Sets boundaries for shared workspaces and types. |
+| **Coordinate microservices logic** | [MICROSERVICES.md](MICROSERVICES.md) | Outlines RPC/messaging and auth boundaries. |
+| **Perform a database schema migration** | [DATABASE_MIGRATION.md](DATABASE_MIGRATION.md) | Standardizes backward-compatible migrations. |
+| **Design or update REST/GraphQL APIs** | [API_DESIGN.md](API_DESIGN.md) | Governs endpoints, error formats, and versioning. |
 
-Use these when a task has a recognizable operating pattern. Pair them with [checklists/PRE_COMMIT.md](../checklists/PRE_COMMIT.md), [checklists/PRE_PR.md](../checklists/PRE_PR.md), and [templates/PULL_REQUEST_TEMPLATE.md](../templates/PULL_REQUEST_TEMPLATE.md) for execution and review.
+---
+
+## 2. Directory Quick Links
+
+### Development Playbooks
+- [FEATURE.md](FEATURE.md) — Feature development workflow.
+- [BUG_FIX.md](BUG_FIX.md) — Bug resolution steps.
+- [REFACTOR.md](REFACTOR.md) — Structural cleanups.
+- [NEW_PROJECT.md](NEW_PROJECT.md) — Workspace initialization.
+- [CODE_REVIEW.md](CODE_REVIEW.md) — Peer code review.
+
+### Operations Playbooks
+- [LAUNCH_MODE.md](LAUNCH_MODE.md) — Release candidate freeze rules.
+- [RELEASE.md](RELEASE.md) — Planned deployments.
+- [HOTFIX.md](HOTFIX.md) — Emergency live patches.
+- [INCIDENT.md](INCIDENT.md) — Coordinate outage triage.
+- [ROLLBACK.md](ROLLBACK.md) — Reverting deployments.
+
+### Architecture & Design Playbooks
+- [PLANNING.md](PLANNING.md) — Multi-step task designs.
+- [DATABASE_MIGRATION.md](DATABASE_MIGRATION.md) — Safe schema migrations.
+- [API_DESIGN.md](API_DESIGN.md) — Consistent API structures.
+- [MONOREPO.md](MONOREPO.md) — Multi-package workspace rules.
+- [MICROSERVICES.md](MICROSERVICES.md) — Service interaction boundaries.
+- [SECURITY_AUDIT.md](SECURITY_AUDIT.md) — Security scanning procedures.
+- [PERFORMANCE_REVIEW.md](PERFORMANCE_REVIEW.md) — Profiling and latency fixes.

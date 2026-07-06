@@ -1,171 +1,216 @@
 # AI Engineering Standard
 
-This document defines the core expectations for AI-assisted engineering work.
+> The central operating standard for AI-assisted software development in this repository. All contributors (both human developers and AI agents) must adhere to these rules.
 
-## 1. Core principle
+---
 
-AI agents are engineering tools, not a replacement for engineering responsibility.
+## 1. Core Principle & Purpose
 
-Every agent action has cost: token cost, time cost, review cost, risk cost, context pollution cost, and integration cost.
+AI agents are engineering tools, not a replacement for human engineering responsibility. Every agent action has a cost (token cost, time cost, review cost, context cost, and production risk cost).
 
-Optimize for production-grade output per token, not maximum output per request.
+Optimize for:
+> **Production-grade output per token**
 
-## 2. Operating philosophy
+not:
+> **Maximum output per request**
 
-```text
-Shipping > Endless Refactor
-Stability > Elegance
-Security > Feature Speed
-Verification > Confidence
-Small diffs > Large refactors
-Production safety > Local cleverness
-```
+---
 
-Agents must not turn small tasks into broad rewrites.
+## 2. Operating Philosophy
 
-## 3. Human ownership
-
-The main agent or human owner keeps responsibility for:
-
-- Scope
-- Architecture decisions
-- Security decisions
-- Integration
-- Verification
-- Git commits
-- Release decisions
-- Production risk acceptance
-
-Subagents may investigate or implement bounded slices, but they do not own the final decision.
-
-## 4. Default workflow
+Ensure your work aligns with these priority trade-offs:
 
 ```text
-Understand request
-↓
-Classify task size
-↓
-Choose model
-↓
-Read bounded context
-↓
-Plan minimal path
-↓
-Implement
-↓
-Verify
-↓
-Review diff
-↓
-Report risks
+Revenue > Perfection  — Focus on delivering active client and business value.
+Stability > Elegance  — Prefer simple, readable patterns over complex refactoring.
+Security > Speed     — Never bypass safety or validation checks for speed.
+Small Diffs > Large   — Keep changes highly targeted and easy to review.
+Verification > Belief — Trust no generated output without concrete verification.
 ```
 
-## 5. Task classification
+---
 
-| Task size | Description | Examples | Subagents |
-|---|---|---|---:|
-| Tiny | Typo, import, small config | Rename variable, missing import, config value | 0 |
-| Small | Isolated fix under 3 files | One component, one validation rule, one unit test | 0 |
-| Medium | Feature/fix across several files | API + UI update, endpoint with tests | 0-1 |
-| Large | Multi-module feature/audit | New module, security audit, performance investigation | 1-2 |
-| Critical | Security, billing, migration, launch | Auth redesign, data migration, vulnerability fix | 1-3 |
+## 3. Human Ownership & Accountability
 
-## 6. Editing rules
+The human developer (or main orchestrating agent) keeps sole responsibility for:
+- Bounding the task scope.
+- Approving architectural changes.
+- Validating security-sensitive implementations.
+- Executing git commits and releases.
+- Accepting production risks.
 
-Prefer the smallest change that fully solves the problem.
+Subagents and coding assistants may propose modifications or investigate bugs, but they do not own the final integration decision.
 
-- Do not refactor unrelated code.
-- Do not change style unless required.
-- Do not rename files unless required.
-- Follow current project patterns for folder structure, naming, error handling, logging, tests, and API conventions.
-- Never clean up unrelated code during a task unless explicitly requested.
+---
 
-## 7. Refactor rules
+## 4. Phase-by-Phase Developer Lifecycle
 
-Refactor only when:
+AI-assisted engineering tasks must follow these five disciplined phases:
 
-- User requested it.
-- Required to fix a bug.
-- Required to avoid security or data-loss risk.
-- Required to make tests pass safely.
-- Required for launch-critical maintainability.
-
-Before refactoring, state why it is necessary, files affected, risk level, and verification plan.
-
-During Launch Mode: no cosmetic refactor, no broad cleanup, no architecture rewrite, no "while I am here" changes.
-
-## 8. Testing and verification
-
-Every completed task should include at least one of: unit tests, integration tests, typecheck, build, lint, manual smoke test, command output, or reasoned explanation when verification tools are unavailable.
-
-Verification ladder:
-
-1. Static reasoning
-2. Typecheck related package
-3. Unit test related file
-4. Integration test related module
-5. Full test suite
-6. Build
-7. Manual QA
-
-Maximum 2 implementation retries. After 2 failed attempts, stop, summarize, explain the blocker, and propose options.
-
-## 9. Stop rules
-
-Stop and ask before continuing if:
-
-- Scope doubles or changes direction
-- More than 2 implementation attempts fail
-- Architecture must change
-- Data migration may be destructive
-- More than 8 unrelated files need edits
-- A larger model is required than planned
-- Production risk is unclear
-- User assumptions appear wrong
-- Security assumption is unclear
-
-## 10. Required output formats
-
-Implementation tasks:
-
-```text
-Summary:
-Files changed:
-Verification:
-Risks:
-Next step:
+```mermaid
+graph LR
+    P[1. Planning] --> B[2. Bounding]
+    B --> E[3. Execution]
+    E --> V[4. Verification]
+    V --> R[5. Review]
 ```
 
-Investigation tasks:
+### Phase 1: Planning
+1.  **Define the Goal:** Clarify the exact feature requirements or bug reproduction steps before opening files.
+2.  **Determine Constraints:** Identify tech stack, dependency limits, security boundaries, and database schema constraints.
+3.  **Draft a Path:** List the files that must be modified and the test cases that must pass.
 
-```text
-Summary:
-Evidence:
-Root cause:
-Options:
-Recommended option:
+### Phase 2: Bounding (Context Control)
+1.  **Target Files:** Load only files directly related to the task.
+2.  **Verify Budgets:** Ensure you do not exceed your file read or subagent budgets (see Section 6).
+3.  **Establish a Summary:** Keep a running working summary to prevent context memory loss over long sessions.
+
+### Phase 3: Execution (Coding)
+1.  **Smallest Diff:** Implement the smallest change that fully satisfies the requirements.
+2.  **Style Alignment:** Follow the project's existing coding conventions (naming, error handling, folder structure). Do not introduce cosmetic style changes.
+3.  **No Unrelated Edits:** Never modify unrelated files or clean up nearby code "while you are here" unless explicitly requested.
+
+### Phase 4: Verification (Testing Ladder)
+1.  **Follow the Ladder:** Validate code changes step-by-step using the testing ladder (see Section 7).
+2.  **Evidence Collection:** Document test logs, build outcomes, and smoke test outputs.
+3.  **Handle Failures:** Stop and reassess if a test fails twice. Do not repeat failed commands in a loop.
+
+### Phase 5: Review
+1.  **Diff Review:** Run a git diff check before staging files to review every line changed.
+2.  **Safety Checklist:** Confirm that no credentials, public endpoints, rate limits, or authorization checks are broken.
+3.  **Draft Summaries:** Output structured change reports containing verification evidence and potential risks.
+
+---
+
+## 5. Task Classification
+
+Every task must be classified before work begins to establish cost and context boundaries:
+
+| Task Size | Description | Examples | Max Subagents | File Read Limit |
+|---|---|---|---:|---:|
+| **Tiny** | Trivial configs, imports, typos | Renaming a variable, adding a missing import, changing a config value | 0 | 3 files |
+| **Small** | Bounded logic under 3 files | Writing a single component, adding one validation rule, fixing an isolated bug | 0 | 8 files |
+| **Medium** | Feature/bug across 2-5 files | Creating an API endpoint with corresponding frontend updates and unit tests | 1 | 20 files |
+| **Large** | Multi-module feature or audit | Adding a new service, performing a security review, or optimization task | 2 | 40 files |
+| **Critical** | Risk-sensitive system redesigns | Migrating databases, authentication changes, fixing core payment/billing logic | 3 | 60 files |
+
+---
+
+## 6. Budget & Resource Limits
+
+To control API expenditures and prevent context bloat, abide by these hard ceilings:
+
+-   **Model Routing:** Always use the lowest-capability model tier (e.g., Small/Mini) that can resolve the task. Reserved Extra-High Reasoning models *only* for planning, security architecture, and complex cross-module bug investigations.
+-   **Escalation Rule:** Before switching to an Extra-High Reasoning model, you must state why the Medium model is insufficient.
+-   **Subagent Limit:** Never spawn more than 3 subagents concurrently. Close subagents immediately once their task is complete.
+
+---
+
+## 7. The Testing & Verification Ladder
+
+Verification must progress from lightweight checks to full system builds:
+
+1.  **Static Reasoning:** Walk through the code logic manually to find edge cases.
+2.  **Static Analysis:** Run the linter and compiler/typecheck on modified files.
+3.  **Targeted Tests:** Run specific unit tests targeting the modified class/function.
+4.  **Integration Tests:** Execute integration suites for the affected modules.
+5.  **Full Test Suite:** Run the complete project test suite to verify no regressions.
+6.  **Build Verification:** Run the production build locally to ensure bundling succeeds.
+7.  **Manual Smoke Check:** Run the service locally and visually test the primary user flow.
+
+---
+
+## 8. Stop & Escalation Rules
+
+Stop work, summarize your findings, and ask for human clarification immediately if:
+-   **Scope Expansion:** The task requires editing more than 8 unrelated files.
+-   **Failed Attempts:** Two consecutive implementation paths or bug fixes fail.
+-   **Architecture Churn:** You discover that a database schema or major API interface must change to complete the task.
+-   **Destructive Risk:** A database migration risks data loss or tables locks.
+-   **Ambiguous Requirements:** The user's request contradicts existing standards or contains logical conflicts.
+-   **Production Risk:** You are unsure of the rollback plan or deployment impact.
+
+---
+
+## 9. Required Output Formats
+
+Ensure your final task responses use these markdown templates:
+
+### For Implementation Work
+```markdown
+### Summary
+[Brief description of the changes and what they accomplish]
+
+### Files Changed
+- [File Name 1](file:///absolute/path/to/file1)
+- [File Name 2](file:///absolute/path/to/file2)
+
+### Verification
+[Output logs of tests run, build checks, or smoke test results]
+
+### Risks & Mitigations
+[Highlight security, performance, or rollback risks]
+
+### Next Step
+[E.g., staging deploy, schema migration execution, human review]
 ```
 
-Review tasks:
+### For Investigation & Bug Hunting
+```markdown
+### Summary of Findings
+[Overview of the bug behavior]
 
-```text
-Verdict:
-Blockers:
-Important non-blockers:
-Verification:
-Launch risk:
+### Evidence & Reproduction
+[Log snippets, tracebacks, or steps to reproduce]
+
+### Root Cause
+[Why the issue occurred]
+
+### Options
+1. [Option A - pros/cons]
+2. [Option B - pros/cons]
+
+### Recommended Solution
+[Specific patch proposal and reasoning]
 ```
 
-## 11. Decision rule
+### For Code & Security Reviews
+```markdown
+### Verdict
+[PASS / PASS WITH NOTES / BLOCKED]
 
-When uncertain between two acceptable solutions, prefer:
+### Blockers (Critical/High Severity)
+- [File Name](file://path/to/file#L12) - [Description of vulnerability or bug]
 
-1. the safer option
-2. the simpler option
-3. the easier option to verify
-4. the easier option to rollback
-5. the easier option to maintain
+### Suggestions (Medium/Low Severity)
+- [Description of refactoring, optimization, or logging suggestion]
 
-## 12. Anti-patterns
+### Verification Checklist
+[Results of security and functional checklists]
 
-Avoid: reading the whole repository before thinking, spawning agents by default, refactoring while fixing bugs, producing long explanations instead of patches, running broad tests before targeted tests, editing generated files manually, touching unrelated files, changing public API without noting impact, upgrading dependencies during launch mode, creating abstractions before repeated need, and hiding uncertainty.
+### Rollback Readiness
+[Is the change backward-compatible? Can it be safely reverted?]
+```
+
+---
+
+## 10. Core Decision Rules
+
+When multiple implementation options are technically sound, always choose based on this hierarchy:
+
+1.  **Safety First:** Select the option with the lowest security and data-loss risk.
+2.  **Simplicity Over Elegance:** Avoid creating generic abstractions before there is a repeated need.
+3.  **Ease of Verification:** Choose the option that is easiest to test automatically.
+4.  **Ease of Rollback:** Prefer backward-compatible designs.
+5.  **Ease of Maintenance:** Write code that matches existing codebase patterns.
+
+---
+
+## 11. Common Anti-Patterns to Avoid
+
+-   **Blind Reading:** Loading the entire repository into context before planning.
+-   **Chaining by Default:** Spawning subagents for trivial tasks (like typo fixes or single imports).
+-   **Cosmetic Churn:** Refactoring code or renaming files while implementing an unrelated feature.
+-   **Conversation Loops:** Explaining changes in prose rather than presenting a concrete git patch.
+-   **Abusing High Tiers:** Using high-reasoning models for formatting, boilerplate generation, or running terminal commands.
+-   **Silencing Risks:** Hiding uncertainty or ignoring failed test logs in progress updates.
