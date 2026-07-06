@@ -1,23 +1,21 @@
-# Code of Conduct
+# Security
 
-This project is for practical engineering collaboration.
+This repository focuses on practical engineering guidance, and security-sensitive changes should be handled with care.
 
-Expected behavior:
+## Reporting a vulnerability
 
-- Be respectful.
-- Be direct without being abusive.
-- Critique ideas, not people.
-- Provide evidence when possible.
-- Avoid hype-driven claims.
-- Do not shame people for tool choice, model choice, or company size.
+Please report suspected vulnerabilities privately through the project maintainer channel rather than opening a public issue. Do not post secrets, credentials, or exploit details in public discussion.
 
-Unacceptable behavior:
+## Expectations
 
-- Harassment
-- Personal attacks
-- Discriminatory comments
-- Spam
-- Tool/vendor flamewars
-- Deliberate misinformation
+- keep security guidance accurate and actionable
+- prefer minimal, reviewable changes for security-related updates
+- document assumptions and verification steps when relevant
+- avoid speculative claims or unverified recommendations
 
-If a discussion becomes unproductive, maintainers may close it.
+## Related documents
+
+- [CONTRIBUTING.md](CONTRIBUTING.md) for contribution expectations
+- [standards/SECURITY_STANDARD.md](standards/SECURITY_STANDARD.md) for baseline guidance
+- [checklists/SECURITY.md](checklists/SECURITY.md) for review steps
+- [GOVERNANCE.md](GOVERNANCE.md) for maintainer process

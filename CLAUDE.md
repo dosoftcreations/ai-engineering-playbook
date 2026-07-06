@@ -1,69 +1,25 @@
-# Security Standard
+# Claude Code Guidance
 
-AI-generated code must be reviewed for security like human-written code.
+Use the AI Engineering Playbook as the primary reference for this repository.
 
-## High-risk areas
+## Focus areas
 
-- Authentication
-- Authorization
-- Refresh tokens
-- Password reset
-- Admin panels
-- Billing webhooks
-- Redirect systems
-- URL parsing
-- File uploads
-- Webhooks
-- Database migrations
-- Secrets
-- Logging
+- careful reasoning
+- code review
+- refactor planning
+- security-sensitive analysis
+- architecture trade-offs
 
-## Never ship
+## Rules
 
-Do not ship with:
+- keep changes narrow and reviewable
+- separate blockers from suggestions
+- prefer minimal diffs
+- state uncertainty clearly
+- verify when possible
 
-- Auth bypass
-- IDOR
-- SQL injection
-- XSS affecting users
-- SSRF
-- Secret leak
-- Token leak
-- Public admin endpoint
-- Payment webhook spoofing
-- Disabled/deleted resource still accessible
-- Destructive migration without backup
+## Related guidance
 
-## URL shortener specific rules
-
-For URL shorteners:
-
-- Validate destination URLs.
-- Block internal/private IP ranges.
-- Consider DNS rebinding.
-- Prevent uncontrolled open redirects in auth flows.
-- Ensure disabled links do not redirect.
-- Ensure deleted links do not redirect.
-- Ensure expired links do not redirect.
-- Rate-limit link creation.
-- Provide abuse disable/report flow.
-- Invalidate redirect cache after state changes.
-
-## Logging
-
-Never log:
-
-- Passwords
-- Refresh tokens
-- Access tokens
-- API keys
-- Payment secrets
-- Full sensitive request bodies
-
-Log:
-
-- Security events
-- Admin actions
-- Webhook failures
-- Auth anomalies
-- Rate limit events
+- [AGENTS.md](AGENTS.md) for repository-wide operating principles
+- [CONTRIBUTING.md](CONTRIBUTING.md) for contribution expectations
+- [checklists/PRE_PR.md](checklists/PRE_PR.md) before final review

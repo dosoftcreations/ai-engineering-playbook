@@ -1,74 +1,17 @@
-# Review Standard
+# Gemini Guidance
 
-Review for production risk, not personal preference.
+Use this repository as a handbook for disciplined AI-assisted engineering.
 
-## Severity
+## Priorities
 
-### Critical
+- stay within the stated scope
+- favor small, verifiable changes
+- keep documentation practical and production-focused
+- call out security and rollout risks explicitly
+- avoid speculative or promotional content
 
-Must fix before merge or launch.
+## Related guidance
 
-Examples:
-
-- Auth bypass
-- SQL injection
-- SSRF
-- Payment webhook spoofing
-- Secret leak
-- Data-loss migration
-
-### High
-
-Should fix before launch.
-
-Examples:
-
-- Missing authorization check
-- Missing rate limit on auth
-- Broken cache invalidation
-- Missing backup
-- Broken quota enforcement
-
-### Medium
-
-Fix soon.
-
-Examples:
-
-- Missing important tests
-- Slow query risk
-- Weak logs
-- Incomplete error handling
-
-### Low
-
-Nice to fix.
-
-Examples:
-
-- Copy issue
-- Minor duplication
-- UI polish
-
-## Finding format
-
-```text
-Severity:
-File:
-Issue:
-Why it matters:
-How to verify:
-Recommended fix:
-```
-
-## Verdict
-
-Use:
-
-```text
-PASS
-PASS WITH NOTES
-BLOCKED
-```
-
-Do not say PASS if blockers remain.
+- [AGENTS.md](AGENTS.md) for repository-wide operating principles
+- [GOVERNANCE.md](GOVERNANCE.md) for scope and decision process
+- [templates/PULL_REQUEST_TEMPLATE.md](templates/PULL_REQUEST_TEMPLATE.md) for review-ready updates

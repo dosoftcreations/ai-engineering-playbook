@@ -1,26 +1,19 @@
-# Changelog
+# Roadmap
 
-## v0.1.0-alpha
+## v1.0.0
 
-Initial alpha release.
+The repository is being shaped as a stable, maintainable open-source handbook for AI-assisted engineering.
 
-Added:
+### Completed
 
-- AI Engineering Standard
-- Model selection standard
-- Token economy standard
-- Context management standard
-- Subagent standard
-- Security standard
-- Review standard
-- Bug fix playbook
-- Feature playbook
-- Launch mode playbook
-- Release playbook
-- Hotfix playbook
-- Incident playbook
-- Production checklists
-- Security checklists
-- Agent templates
-- Prompt templates
-- Example usage patterns
+- establish the core repository structure
+- add standards, playbooks, checklists, templates, and prompts
+- add governance, contribution, and security guidance
+- improve the repository landing page and documentation clarity
+
+### Next priorities
+
+- expand real-world examples and case studies
+- refine the standards with more evidence-backed guidance where appropriate
+- improve cross-linking and discoverability across the documentation set
+- invite and review community contributions
