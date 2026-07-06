@@ -1,22 +1,14 @@
 # Templates
 
-This directory contains reusable starting points for common repository workflows.
+> Reusable starting points, boilerplate configurations, and structures to standardize AI instructions and team collaboration.
 
-## Quick links
+## Included Templates
 
-- [AGENTS.md](AGENTS.md)
-- [CLAUDE.md](CLAUDE.md)
-- [GEMINI.md](GEMINI.md)
-- [PULL_REQUEST_TEMPLATE.md](PULL_REQUEST_TEMPLATE.md)
-- [ISSUE_TEMPLATE.md](ISSUE_TEMPLATE.md)
-- [ADR.md](ADR.md)
-- [REVIEW.md](REVIEW.md)
-
-## Included documents
-
-- AGENTS.md — repository-specific AI workflow guidance.
-- PULL_REQUEST_TEMPLATE.md — pull request structure.
-- ISSUE_TEMPLATE.md — issue structure.
-- ADR.md — architecture decision record format.
-
-Use these templates when the workflow is recurring and should remain consistent. They pair well with [CONTRIBUTING.md](../CONTRIBUTING.md) and the relevant checklist in [checklists/README.md](../checklists/README.md).
+*   [AGENTS.md](AGENTS.md) — Base instructions to load into AI agent configurations (system instructions, `.agents`).
+*   [CLAUDE.md](CLAUDE.md) — Custom instructions tailored for Claude Code.
+*   [GEMINI.md](GEMINI.md) — Custom instructions tailored for Gemini Developer CLI.
+*   [PULL_REQUEST_TEMPLATE.md](PULL_REQUEST_TEMPLATE.md) — Review-ready pull request templates.
+*   [ISSUE_TEMPLATE.md](ISSUE_TEMPLATE.md) — Standalone format for repository issues.
+*   [ADR.md](ADR.md) — Architecture Decision Record structure to log design decisions.
+*   [REVIEW.md](REVIEW.md) — Blank checklist for manual or automated code reviews.
+*   [PRE_COMMIT_CONFIG.yaml](PRE_COMMIT_CONFIG.yaml) — Boilerplate configuration for Git pre-commit hook automation.

@@ -1,17 +1,45 @@
 # Hotfix Playbook
 
-Use this playbook for urgent production fixes that must be applied quickly and safely.
+Use this playbook for urgent production fixes that must be applied quickly and safely to resolve a live incident.
 
-## Hotfix workflow
+## 1. Goal
 
-1. Contain the impact and reduce further harm.
-2. Verify the problem and identify the minimal root cause.
-3. Apply the smallest safe fix.
-4. Validate the change with the narrowest relevant evidence.
-5. Monitor the outcome closely and document what changed.
+Restore safe production behavior as quickly and safely as possible.
 
-## Guardrails
+## 2. Hotfix Rules
 
-- Avoid bundling unrelated improvements into a hotfix.
-- Preserve rollback options.
-- Record the decision and the rationale for future reference.
+- **Strict Containment:** Fix only the specific production issue. Do not include unrelated feature work, cosmetic cleanups, or refactorings.
+- **Minimal Diffs:** Prefer the smallest possible patch that resolves the issue over a complete redesign.
+- **Verify the Failure Path:** Ensure you understand the exact failure path and verify the fix against that path before deploying.
+- **Prepare Rollback:** Always have a rollback package or script ready before applying the fix.
+
+## 3. Hotfix Workflow
+
+```text
+Identify impact (what is broken and who is affected)
+↓
+Identify root cause (verify the specific failure path)
+↓
+Patch minimal fix
+↓
+Verify locally (targeted tests + manual reproduction check)
+↓
+Deploy hotfix
+↓
+Monitor production logs and error rates
+↓
+Write follow-up task (for long-term mitigation)
+```
+
+## 4. Final Output Template
+
+Every hotfix deployment must document:
+
+```text
+Impact: [what was broken, duration, affected users]
+Root cause: [why the bug happened in production]
+Fix: [summary of the code change applied]
+Verification: [how the fix was tested before deploy]
+Rollback: [step-by-step commands to revert the change]
+Follow-up: [required cleanup, refactor, or test coverage tasks]
+```

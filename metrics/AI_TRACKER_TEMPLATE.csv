@@ -1,0 +1,4 @@
+Date,Task_ID,Task_Name,Model_Tier,Est_Duration_Mins,Act_Duration_Mins,Token_Cost_USD,Subagents_Spawned,Rework_Required,Reopened,Notes
+2026-07-06,TASK-101,Implement User Auth,High,120,95,0.45,1,No,No,Successfully implemented auth using Small model for helper unit tests.
+2026-07-06,TASK-102,Refactor Landing Copy,Small,15,10,0.02,0,No,No,Used small model to change copy without touching other files.
+2026-07-06,TASK-103,Migrate DB Schema,Extra-High,180,240,1.25,2,Yes,No,Required minor rework on indexes because subagent misunderstood constraint.

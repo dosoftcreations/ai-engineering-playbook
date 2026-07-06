@@ -1,18 +1,12 @@
 # Prompts
 
-This directory contains bounded prompt patterns for common engineering tasks.
+> Structured, production-oriented prompt patterns to direct AI agents in specific engineering tasks.
 
-## Quick links
+## Included Prompts
 
-- [IMPLEMENTATION.md](IMPLEMENTATION.md)
-- [LAUNCH_GATE.md](LAUNCH_GATE.md)
-- [REVIEW.md](REVIEW.md)
-- [ARCHITECTURE.md](ARCHITECTURE.md)
-- [DEBUGGING.md](DEBUGGING.md)
-
-## Included documents
-
-- IMPLEMENTATION.md — scoped implementation work.
-- LAUNCH_GATE.md — launch gate review.
-
-These prompts are intended to be practical and focused rather than general-purpose chat templates. Use them alongside [playbooks/README.md](../playbooks/README.md) and [checklists/PRE_PR.md](../checklists/PRE_PR.md) when the task is already well-scoped.
+*   [IMPLEMENTATION.md](IMPLEMENTATION.md) — Prompt pattern to instruct agents on bounded code changes.
+*   [LAUNCH_GATE.md](LAUNCH_GATE.md) — Prompt pattern for running a release candidate pre-launch gate review.
+*   [AUDIT.md](AUDIT.md) — Prompt pattern to perform repository risk audits.
+*   [ARCHITECTURE.md](ARCHITECTURE.md) — Prompt pattern to guide agents in proposing new architectures or database changes.
+*   [REVIEW.md](REVIEW.md) — Prompt pattern for automated code review support.
+*   [DEBUGGING.md](DEBUGGING.md) — Prompt pattern for structured bug troubleshooting.

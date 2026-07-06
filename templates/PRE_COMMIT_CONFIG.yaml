@@ -1,0 +1,37 @@
+# Sample .pre-commit-config.yaml
+# Copy this file to your target project root and install pre-commit framework:
+# $ pip install pre-commit
+# $ pre-commit install
+
+repos:
+  # 1. Base Markdown Formatting and Linting
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.1.0
+    hooks:
+      - id: prettier
+        types: [markdown, yaml, json]
+        additional_dependencies:
+          - prettier@3.1.0
+
+  # 2. Markdown Linting for Structure
+  - repo: https://github.com/igorshubovych/markdownlint-cli2
+    rev: v0.11.0
+    hooks:
+      - id: markdownlint-cli2
+        types: [markdown]
+
+  # 3. Secret and Credential Scanning (Critical for AI Playbook security)
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.1
+    hooks:
+      - id: gitleaks
+
+  # 4. Standard Code Quality Checks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+        args: ['--maxkb=500']

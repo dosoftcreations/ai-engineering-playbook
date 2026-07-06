@@ -5,24 +5,27 @@ Use this prompt for production launch review.
 ```text
 You are performing a launch gate review.
 
-Do not recommend new features.
-Do not recommend broad refactors.
-Identify launch blockers and high-risk non-blockers.
+Launch mode:
+- Feature freeze is active.
+- Do not recommend new features.
+- Do not recommend broad refactors.
+- Only identify launch blockers and important post-launch fixes.
 
-Review areas:
-- authentication and authorization
-- core user flow
-- security
-- backup and recovery
-- rollback readiness
-- monitoring and alerts
-- admin controls
-- smoke tests
+Check:
+1. Auth and authorization
+2. Core user flow
+3. Billing/quota if applicable
+4. Database backup and restore
+5. Security headers and secrets
+6. Admin and abuse controls
+7. Monitoring and logging
+8. Deploy and rollback readiness
+9. Final smoke test
 
 Output:
-- GO / GO WITH RISKS / NO-GO
-- blockers
-- high-risk non-blockers
-- required smoke tests
-- rollback readiness
+- Launch verdict: GO / GO WITH RISKS / NO-GO
+- Blockers
+- High-priority non-blockers
+- Required smoke tests
+- Rollback readiness
 ```

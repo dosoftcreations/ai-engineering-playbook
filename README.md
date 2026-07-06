@@ -1,64 +1,112 @@
 # AI Engineering Playbook
 
-Version: v1.0.0
+> A vendor-neutral operating manual for software engineering teams building, shipping, and maintaining production systems with AI.
 
-A vendor-neutral handbook for building, reviewing, shipping, and operating software with AI.
+[![Status](https://img.shields.io/badge/status-production-green)](#status)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![AI Engineering](https://img.shields.io/badge/AI-Engineering-black)](#)
+[![Vendor Neutral](https://img.shields.io/badge/vendor-neutral-green)](#)
 
-This repository is intended to help teams apply AI-assisted engineering practices in a practical, production-focused, and maintainable way. It is not a prompt dump, a model leaderboard, or a collection of marketing tips.
+---
 
-## Repository purpose
+## 1. Problem Statement
 
-The project exists to document repeatable engineering practices for AI-assisted software development.
+AI coding assistants (like Cursor, Claude Code, Gemini CLI, and agentic workflows) are revolutionizing software development. However, most teams operate AI agents with ad-hoc prompts, runaway token usage, context pollution, inconsistent review standards, and weak production discipline.
 
-## What is inside
+Without structured engineering practices, AI assistance leads to:
+*   **Unintended Rewrites:** Small edits ballooning into sweeping, untested refactors.
+*   **Runaway Costs:** Heavy, high-reasoning models used for simple tasks (like formatting).
+*   **Broken Deployments:** Shipping code that compiles locally but violates basic production requirements.
 
-- Standards for engineering workflow, review, security, context management, and model selection.
-- Playbooks for feature work, bug fixing, launch, release, incident response, and refactoring.
-- Checklists for pre-commit, pre-PR, pre-release, and production readiness.
-- Templates for agent guidance, issue tracking, pull requests, and architecture decisions.
-- Prompts for bounded implementation and launch-gate review.
+This repository provides the **discipline, standards, and playbooks** required to run AI-assisted development like a real engineering system.
 
-## Quick navigation
+---
 
-- Start here: [standards/README.md](standards/README.md)
-- Operational workflows: [playbooks/README.md](playbooks/README.md)
-- Verification shortcuts: [checklists/README.md](checklists/README.md)
-- Reusable starting points: [templates/README.md](templates/README.md)
-- Prompt patterns: [prompts/README.md](prompts/README.md)
-- Supporting glossary: [reference/GLOSSARY.md](reference/GLOSSARY.md)
-- Worked examples: [examples/README.md](examples/README.md)
-- RFCs and proposals: [rfcs/README.md](rfcs/README.md)
-- Real-world examples: [case-studies/README.md](case-studies/README.md)
+## 2. This Is NOT
 
-## Repository layout
+*   ❌ A collection of "magic prompts" or copy-paste tricks.
+*   ❌ A leaderboard of AI models or chat tools.
+*   ❌ A repository of AI news or marketing hype.
+*   ❌ A replacement for human engineering responsibility.
 
-- standards/ — stable engineering rules and policies
-- playbooks/ — how work is performed in practice
-- checklists/ — concise operational verification steps
-- templates/ — reusable starting points
-- prompts/ — bounded, production-oriented prompt patterns
-- reference/ — glossary and supporting references
+---
 
-## Recommended reading order
+## 3. Core Philosophy
 
-1. Start with the standards in standards/.
-2. Use the playbooks when executing real work.
-3. Apply the checklists before review, release, or rollout.
-4. Reuse the templates and prompts when the workflow is repetitive.
+Our standards align to these core trade-offs:
 
-## Contributing
+```text
+Revenue > Perfection  — Focus on active business and client needs first.
+Stability > Elegance  — Prefer simple, working code over cosmetic cleanups.
+Security > Speed     — Do not compromise security for quick feature delivery.
+Small Diffs > Large   — Keep edits targeted, readable, and reviewable.
+Quality per Token > Output per Request
+```
 
-Contributions should improve engineering practice rather than add hype. See [CONTRIBUTING.md](CONTRIBUTING.md) and [GOVERNANCE.md](GOVERNANCE.md) for the quality bar and maintainer expectations.
+AI agents are not free. Every agent action has a cost (token, time, review, risk). The goal is not to maximize AI usage; the goal is to ship high-quality software with minimal waste.
 
-Before opening a pull request, review [checklists/PRE_PR.md](checklists/PRE_PR.md) and use [templates/PULL_REQUEST_TEMPLATE.md](templates/PULL_REQUEST_TEMPLATE.md).
+---
 
-## Related documents
+## 4. Quick Start
 
-- [SECURITY.md](SECURITY.md) for reporting and handling security concerns
-- [CHANGELOG.md](CHANGELOG.md) for release history
-- [ROADMAP.md](ROADMAP.md) for planned direction
-- [MAINTAINER_GUIDE.md](MAINTAINER_GUIDE.md) for long-term project principles
+Get up and running with the playbook in three steps:
+
+1.  **Configure Your Workspace:** Copy the contents of [templates/AGENTS.md](templates/AGENTS.md) into your repository's agent configuration file (e.g., `.agents`, `AGENTS.md`, or your system instructions).
+2.  **Establish the Rules:** Point your AI agent to the playbook:
+    ```text
+    Read standards/AI_ENGINEERING_STANDARD.md before editing code.
+    Use playbooks/LAUNCH_MODE.md if the product is close to release.
+    ```
+3.  **Deploy Issue Templates:** Ensure issue templates are set up under `.github/ISSUE_TEMPLATE/` to guide bug reports and feature proposals.
+
+---
+
+## 5. Repository Map
+
+The playbook is organized into modular directories:
+
+*   [standards/](standards/) — Stable rules, policies, model routing, and token budgets.
+*   [playbooks/](playbooks/) — Actionable, step-by-step procedures for coding, releases, and incident mitigation.
+*   [checklists/](checklists/) — Verification checklists to run before commits, PR reviews, and deployments.
+*   [templates/](templates/) — Reusable boilerplates (PR templates, issue structures, ADRs).
+*   [prompts/](prompts/) — Bounded prompt patterns for specific developer operations.
+*   [reference/](reference/) — Glossary, decision trees, and model capability tier comparisons.
+
+For a full breakdown, see [REPOSITORY_MAP.md](REPOSITORY_MAP.md) or the [DOCUMENT_INDEX.md](DOCUMENT_INDEX.md).
+
+---
+
+## 6. Learning Path
+
+For new engineers or team onboarding, follow this reading order:
+
+1.  **Start Here:** [START_HERE.md](START_HERE.md) — The onboarding portal.
+2.  **Standard:** [standards/AI_ENGINEERING_STANDARD.md](standards/AI_ENGINEERING_STANDARD.md) — Task sizing and editing rules.
+3.  **Model Selection:** [standards/MODEL_SELECTION.md](standards/MODEL_SELECTION.md) — Cost routing guidelines.
+4.  **Token Economy:** [standards/TOKEN_ECONOMY.md](standards/TOKEN_ECONOMY.md) — Budgeting rules.
+5.  **Context Management:** [standards/CONTEXT_MANAGEMENT.md](standards/CONTEXT_MANAGEMENT.md) — Scope control.
+6.  **Playbooks:** [playbooks/README.md](playbooks/README.md) — Standard workflows.
+
+For the full roadmaps, see [LEARNING_PATH.md](LEARNING_PATH.md) and [CURRICULUM.md](CURRICULUM.md).
+
+---
+
+## 7. Roadmap
+
+*   **v1.0.0 (Current):** Stabilize structure, remove duplicate files, enforce naming consistency, and resolve filename mismatches.
+*   **v1.1.0 (Next):** Expand worked examples (Next.js, SaaS, Monorepos) and add case studies on team routing.
+*   **v1.2.0:** Establish quantitative metrics for token savings and rework rates.
+
+See [ROADMAP.md](ROADMAP.md) for details.
+
+---
+
+## 8. Contributing
+
+Contributions should focus on improving engineering practice rather than adding hype. See [CONTRIBUTING.md](CONTRIBUTING.md) and [GOVERNANCE.md](GOVERNANCE.md) for quality bars and contributor guidelines.
+
+---
 
 ## License
 
-This project is licensed under the MIT License. See LICENSE for details.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
