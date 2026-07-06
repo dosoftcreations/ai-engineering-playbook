@@ -1,6 +1,6 @@
 # Learning Paths
 
-> Guided roadmaps designed to help you navigate the AI Engineering Playbook based on your specific role or journey.
+> **Document Responsibility:** This file is the dedicated educational roadmap for the repository. Its sole purpose is to guide readers sequentially through the documentation based on role-based journeys (Solo Founder, Team Lead, Production Launch) or top-down reading order, with estimated reading times and specific file lists.
 
 ---
 
@@ -10,30 +10,30 @@
 *Best for: Solopreneurs, single-developer startups, and builders using AI as an automated development team.*
 *   **Goal:** Build, test, and ship features rapidly with zero code bloat and zero token cost waste.
 *   **Reading Roadmap:**
-    1.  [Core Philosophy](README.md#3-core-philosophy) — Establish the cost-value mindset.
-    2.  [AI Engineering Standard](standards/AI_ENGINEERING_STANDARD.md) — Master task sizes, editing limits, and stop rules.
-    3.  [Model Selection Standard](standards/MODEL_SELECTION.md) — Route simple tasks to Small/Mini models to save costs.
-    4.  [Agent Template](templates/AGENTS.md) — Copy and load rules into your coding IDE.
+    1.  [Core Philosophy](README.md#3-core-philosophy) (README.md) — Establish the cost-value mindset.
+    2.  [AI Engineering Standard](standards/AI_ENGINEERING_STANDARD.md) (standards/) — Master task sizes, editing limits, and stop rules.
+    3.  [Model Selection Standard](standards/MODEL_SELECTION.md) (standards/) — Route simple tasks to Small/Mini models to save costs.
+    4.  [Agent Template](templates/AGENTS.md) (templates/) — Copy and load rules into your coding IDE.
 *   **Estimated reading time:** 20 mins
 
 ### 👥 Path B: Team Lead
 *Best for: Tech leads, engineering managers, and architects establishing standards for a development team.*
 *   **Goal:** Enforce quality controls, run safe code reviews, and automate verification checks.
 *   **Reading Roadmap:**
-    1.  [Review Standard](standards/REVIEW_STANDARD.md) — Set up PR severity levels and checklists.
-    2.  [Git Standard](standards/GIT_STANDARD.md) — Maintain clean branch and commit trees.
-    3.  [Subagent Standard](standards/SUBAGENT_STANDARD.md) — Set boundaries for multi-agent delegation.
-    4.  [Governance](GOVERNANCE.md) — Establish contribution standards.
+    1.  [Review Standard](standards/REVIEW_STANDARD.md) (standards/) — Set up PR severity levels and checklists.
+    2.  [Git Standard](standards/GIT_STANDARD.md) (standards/) — Maintain clean branch and commit trees.
+    3.  [Subagent Standard](standards/SUBAGENT_STANDARD.md) (standards/) — Set boundaries for multi-agent delegation.
+    4.  [Governance](GOVERNANCE.md) (root/) — Establish contribution standards.
 *   **Estimated reading time:** 25 mins
 
 ### 🚢 Path C: Production Launch
 *Best for: Operations engineers, release managers, and developers preparing to ship a product to live users.*
 *   **Goal:** Minimize release risks, protect database integrity, and ensure rollback capability.
 *   **Reading Roadmap:**
-    1.  [Launch Mode Playbook](playbooks/LAUNCH_MODE.md) — Learn launch freeze rules and blocker triage.
-    2.  [Release Playbook](playbooks/RELEASE.md) — Walk through pre-deploy, deploy, and post-deploy.
-    3.  [Production Checklist](checklists/PRODUCTION.md) — Verify infrastructure, SSL, backups, and alerting.
-    4.  [Incident Playbook](playbooks/INCIDENT.md) — Plan triage and post-mortems for outages.
+    1.  [Launch Mode Playbook](playbooks/LAUNCH_MODE.md) (playbooks/) — Learn launch freeze rules and blocker triage.
+    2.  [Release Playbook](playbooks/RELEASE.md) (playbooks/) — Walk through pre-deploy, deploy, and post-deploy.
+    3.  [Production Checklist](checklists/PRODUCTION.md) (checklists/) — Verify infrastructure, SSL, backups, and alerting.
+    4.  [Incident Playbook](playbooks/INCIDENT.md) (playbooks/) — Plan triage and post-mortems for outages.
 *   **Estimated reading time:** 30 mins
 
 ---

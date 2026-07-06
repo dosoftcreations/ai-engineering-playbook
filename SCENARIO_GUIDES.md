@@ -1,6 +1,6 @@
 # Scenario Guides
 
-> Navigate the AI Engineering Playbook by the specific problem you need to solve.
+> **Document Responsibility:** This file is the task-oriented navigation index. Its sole purpose is to map common, real-world developer problems (e.g., hotfixing a bug, launching a SaaS, running a database migration) directly to the relevant files, playbooks, and checklists without duplicating content.
 
 ---
 

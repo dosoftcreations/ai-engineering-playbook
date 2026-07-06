@@ -1,6 +1,6 @@
 # Repository UX & Usability Review
 
-This document reviews the developer experience (DX) and information architecture of the repository, identifying friction points, implemented solutions, and future recommendations.
+> **Document Responsibility:** This file is the usability audit log. Its sole purpose is to document developer experience (DX) friction points, track sprint resolutions, and record long-term maintainability recommendations for repository maintainers.
 
 ---
 

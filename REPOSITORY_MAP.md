@@ -1,6 +1,6 @@
 # Repository Map
 
-> Visual layout and folder responsibilities of the AI Engineering Playbook repository.
+> **Document Responsibility:** This file is the structural and folder-level guide. Its sole purpose is to explain the physical directory layout of the repository, the responsibilities of each directory, and the relationships between them.
 
 ---
 

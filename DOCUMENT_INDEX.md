@@ -1,6 +1,6 @@
 # Document Index
 
-> Classification of every document in the repository to establish a clear information architecture.
+> **Document Responsibility:** This file is the comprehensive catalog of all documents in the repository. Its sole purpose is to classify every single markdown file as Core, Supporting, Reference, or Example, ensuring clear document categorization and ownership.
 
 ---
 

@@ -1,6 +1,6 @@
 # Start Here
 
-> Welcome to the AI Engineering Playbook — a vendor-neutral operating manual for software development teams building, shipping, and maintaining production systems with AI coding assistants.
+> **Document Responsibility:** This file is the absolute entry point for new visitors. Its sole purpose is to onboard new readers, define the target audience, and route them to the specialized navigation documents (Learning Paths, Scenario Guides, or the Document Index) based on their immediate goals.
 
 ---
 
@@ -19,34 +19,25 @@
 
 ---
 
-## 🧭 Onboarding Paths (Choose Your Journey)
+## 🧭 Navigating the Playbook
 
-To help you get value out of this handbook in under five minutes, choose the path that matches your current goal:
+To help you get value out of this handbook quickly, select the specialized navigation guide that matches your goal:
 
-| User Journey | Primary Focus | Estimated Reading Time | Link |
-|---|---|---|---|
-| **Solo Founder** | Fast, cost-efficient, bloat-free feature building | 20 mins | [LEARNING_PATH.md#path-a-solo-founder](LEARNING_PATH.md#path-a-solo-founder) |
-| **Team Lead** | Peer reviews, Git trees, subagent boundaries | 25 mins | [LEARNING_PATH.md#path-b-team-lead](LEARNING_PATH.md#path-b-team-lead) |
-| **Production Launch** | Launch blockers, deployments, incidents | 30 mins | [LEARNING_PATH.md#path-c-production-launch](LEARNING_PATH.md#path-c-production-launch) |
-| **General Reading** | Step-by-step sequential onboarding | 20 mins | [LEARNING_PATH.md#2-general-sequential-reading-path](LEARNING_PATH.md#2-general-sequential-reading-path) |
-
----
-
-## ⚡ Problem-Oriented Scenario Guides
-
-If you are facing a specific operational problem right now, jump directly to the relevant files:
-*   I'm **fixing a production bug:** [recipes/FIX_PRODUCTION_BUG.md](recipes/FIX_PRODUCTION_BUG.md)
-*   I'm **starting a new project:** [recipes/CREATE_AGENTS_MD.md](recipes/CREATE_AGENTS_MD.md)
-*   I'm **preparing a launch candidate:** [recipes/LAUNCH_SAAS.md](recipes/LAUNCH_SAAS.md)
-*   I'm **running a database migration:** [recipes/DATABASE_MIGRATION.md](recipes/DATABASE_MIGRATION.md)
-
-For a complete list of problem-oriented links, see [SCENARIO_GUIDES.md](SCENARIO_GUIDES.md).
+1.  **If you want to learn AI engineering step-by-step or by role:**
+    *   *Best for onboarding and learning standard rules.*
+    *   **Go to:** [LEARNING_PATH.md](LEARNING_PATH.md) (Solo Founder, Team Lead, and Production Launch paths).
+2.  **If you are facing a specific, active coding task or issue right now:**
+    *   *Best for looking up immediate, problem-based workflows.*
+    *   **Go to:** [SCENARIO_GUIDES.md](SCENARIO_GUIDES.md) (Starting a project, hotfixing, launching, database migrations).
+3.  **If you want a flat directory map or to see how files are classified:**
+    *   *Best for understanding the repo folder layout and finding files by type (Core, Supporting, Reference, Examples).*
+    *   **Go to:** [REPOSITORY_MAP.md](REPOSITORY_MAP.md) & [DOCUMENT_INDEX.md](DOCUMENT_INDEX.md).
 
 ---
 
-## 🧠 Core Philosophy & Quick Start
+## ⚡ Quick Start
 
 If you are an agent or developer starting work in this repository:
-1.  Read the core operating standard first: [standards/AI_ENGINEERING_STANDARD.md](standards/AI_ENGINEERING_STANDARD.md).
+1.  Read the core operating standard: [standards/AI_ENGINEERING_STANDARD.md](standards/AI_ENGINEERING_STANDARD.md).
 2.  Review your token and file budgets: [standards/TOKEN_ECONOMY.md](standards/TOKEN_ECONOMY.md).
 3.  Always check your diffs before committing: [checklists/PRE_COMMIT.md](checklists/PRE_COMMIT.md).
